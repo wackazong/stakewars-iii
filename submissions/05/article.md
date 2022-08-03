@@ -98,7 +98,7 @@ Add the disk to the virtual machine setup.
 
 ![screenshot](img/02/10_azure_review_and_create.png)
 
-### 
+###
 
 ![screenshot](img/02/11_azure_create.png)
 
@@ -166,7 +166,7 @@ As soon as you start the node it will start downloading headers and blocks. If y
 
 ### Login to NEAR shardnet on manager
 
-Since near-cli is only installed on the manager for security reasons, you need to create the `validator_key.json` file on the manager and then copy it securely to the node. 
+Since near-cli is only installed on the manager for security reasons, you need to create the `validator_key.json` file on the manager and then copy it securely to the node.
 
 ![screenshot](img/02/28_near_login_for_validator_terminal.png)
 
@@ -219,7 +219,13 @@ Check the logs using `journalctl`.
 
 ![screenshot](img/02/38_journalctl.png)
 
-## Deploy and activate staking contract 
+## Pricing for Azure
+
+I used the following configuration which results in the displayed pricing.
+
+![screenshot](img/02/27_cost_azure.png)
+
+## Deploy and activate staking contract
 
 Using near-cli on the manager, deploy a staking contract for your node. Stake some NEAR with it and then activate the Validator seat application process.
 
@@ -251,14 +257,14 @@ You can always check the current state of your validator node in the explorer.
 
 To become a validator, your node must meet the following criteria
 
-* The node must be fully synced
-* The `validator_key.json` file must be in place
-* The contract must be initialized with the `public_key` in `validator_key.json`
-* `account_id` in the `validator_key.json` file must be set to the staking pool contract id
-* There must be enough delegations to meet the minimum seat price.
-* A proposal must be submitted by pinging the contract
-* Once a proposal is accepted a validator must wait 2-3 epoch to enter the validator set
-* Once in the validator set the validator must produce great than 90% of assigned blocks
+- The node must be fully synced
+- The `validator_key.json` file must be in place
+- The contract must be initialized with the `public_key` in `validator_key.json`
+- `account_id` in the `validator_key.json` file must be set to the staking pool contract id
+- There must be enough delegations to meet the minimum seat price.
+- A proposal must be submitted by pinging the contract
+- Once a proposal is accepted a validator must wait 2-3 epoch to enter the validator set
+- Once in the validator set the validator must produce great than 90% of assigned blocks
 
 ## Monitoring and checking node status
 
